@@ -1,10 +1,12 @@
 import { configureStore, } from '@reduxjs/toolkit'
 import { paletteSlice, } from '../../entities/palette'
+import { timerSlice, } from '../../entities/timer/model/timerSlice'
 
 
 export const store = configureStore({
   reducer: {
     palette: paletteSlice.reducer,
+    timer: timerSlice.reducer,
   },
 })
 

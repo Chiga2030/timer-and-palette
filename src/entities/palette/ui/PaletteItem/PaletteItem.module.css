@@ -1,0 +1,40 @@
+.label {
+  border-radius: .4rem;
+  height: 10vw;
+  width: 10vw;
+  position: relative;
+  flex-grow: 1;
+  box-shadow: 0 10px 5px -5px rgba(30, 129, 204, 0.2);
+  cursor: pointer;
+  transition: transform .2s ease-in-out;
+}
+
+.label:hover {
+  transform: scale(1.05);
+}
+
+
+.closeButton {
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  border: none;
+  border-radius: .2rem;
+  background-color: #222222;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.label:hover > .closeButton {
+  opacity: 1;
+}
+
+
+.input {
+  position: absolute;
+  bottom: 0;
+  visibility: hidden;
+}

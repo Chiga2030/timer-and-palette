@@ -23,6 +23,10 @@
     color: #747bff;
   }
 
+  a:visited {
+    color: unset;
+  }
+
   button {
     background-color: #f9f9f9;
   }

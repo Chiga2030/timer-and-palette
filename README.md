@@ -1,5 +1,8 @@
 # Timer and palette
 
+### Demo
+[Github-pages](https://chiga2030.github.io/timer-and-palette/)
+
 ## Stack
 - TypeScript
 - React + Vite

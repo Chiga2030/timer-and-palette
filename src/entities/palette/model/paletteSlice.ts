@@ -17,6 +17,17 @@ export const paletteSlice = createSlice({
   initialState,
   reducers: {
     addColor: (state, action: PayloadAction<Color>) => {
+      /**
+       * Меняем статус для последнего элемента
+       */
+      const lastElement = state.colorList[state.colorList.length - 1]
+      if (lastElement) {
+        lastElement.status = 'picked'
+      }
+
+      /**
+       * Добавляем новый элемент
+       */
       state.colorList.push(action.payload)
     },
 

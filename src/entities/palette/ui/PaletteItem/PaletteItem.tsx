@@ -23,12 +23,16 @@ export const PaletteItem = memo(({
     /**
      * Открываем пикер по умолчанию при добавлению нового цвета в палитру.
      */
-    if (status === 'new') {
-      setTimeout(() => {
+    const timeoutId = setTimeout(() => {
+      if (status === 'new') {
         if (inputRef.current) {
           inputRef.current.click()
         }
-      }, 0)
+      }
+    }, 200)
+
+    return () => {
+      clearTimeout(timeoutId)
     }
   }, [ status, ])
 
@@ -37,7 +41,11 @@ export const PaletteItem = memo(({
     /**
      * Обновляем статус, что бы в сторе не висели не актуальные данные.
      */
-    return () => didColorStatusChanged(id, 'picked')
+    return () => {
+      setTimeout(() => {
+        didColorStatusChanged(id, 'picked')
+      }, 300)
+    }
   }, [ didColorStatusChanged, id, ])
 
 
